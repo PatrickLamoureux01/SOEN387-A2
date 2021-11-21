@@ -58,7 +58,6 @@ public class PollServlet extends HttpServlet {
                 response.sendRedirect("PollDeletion.jsp");
                 return;
             case "run":
-
                 List<Poll> runningPolls = new ArrayList<Poll>();
                 try {
                     String select_polls_sql = "SELECT * FROM polls WHERE status='created'";
@@ -82,20 +81,81 @@ public class PollServlet extends HttpServlet {
                 request.getRequestDispatcher("manager_index.jsp").forward(request, response);
                 break;
             case "release":
-                //PollBusiness.ReleasePoll(thePoll);
-                request.getRequestDispatcher("manager_index.jsp").forward(request, response);
-                break;
+                List<Poll> releasePolls = new ArrayList<Poll>();
+                try {
+                    String select_polls_sql = "SELECT * FROM polls WHERE status='running'";
+                    Statement select_stmt = conn.createStatement();
+                    ResultSet rs = select_stmt.executeQuery(select_polls_sql);
+                    while (rs.next()) {
+                        String id = rs.getString("poll_id");
+                        String name = rs.getString("name");
+                        String question = rs.getString("question");
+                        Poll poll = new Poll(id, name, question);
+                        releasePolls.add(poll);
+                    }
+                    session.setAttribute("releasePolls",releasePolls);
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+                response.sendRedirect("ReleasePoll.jsp");
+                return;
             case "unrelease":
-                //PollBusiness.UnreleasePoll(thePoll);
-                request.getRequestDispatcher("manager_index.jsp").forward(request, response);
-                break;
+                List<Poll> unreleasePolls = new ArrayList<Poll>();
+                try {
+                    String select_polls_sql = "SELECT * FROM polls WHERE status='released'";
+                    Statement select_stmt = conn.createStatement();
+                    ResultSet rs = select_stmt.executeQuery(select_polls_sql);
+                    while (rs.next()) {
+                        String id = rs.getString("poll_id");
+                        String name = rs.getString("name");
+                        String question = rs.getString("question");
+                        Poll poll = new Poll(id, name, question);
+                        unreleasePolls.add(poll);
+                    }
+                    session.setAttribute("unreleasePolls",unreleasePolls);
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+                response.sendRedirect("UnreleasePoll.jsp");
+                return;
             case "update":
-                //request.getRequestDispatcher("update_poll.jsp").forward(request, response);
-                break;
+                List<Poll> updatePolls = new ArrayList<Poll>();
+                try {
+                    String select_polls_sql = "SELECT * FROM polls WHERE status='running'";
+                    Statement select_stmt = conn.createStatement();
+                    ResultSet rs = select_stmt.executeQuery(select_polls_sql);
+                    while (rs.next()) {
+                        String id = rs.getString("poll_id");
+                        String name = rs.getString("name");
+                        String question = rs.getString("question");
+                        Poll poll = new Poll(id, name, question);
+                        updatePolls.add(poll);
+                    }
+                    session.setAttribute("updatePolls",updatePolls);
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+                response.sendRedirect("UpdatePoll.jsp");
+                return;
             case "clear":
-                //PollBusiness.ClearPoll(thePoll);
-                request.getRequestDispatcher("manager_index.jsp").forward(request, response);
-                break;
+                List<Poll> clearPolls = new ArrayList<Poll>();
+                try {
+                    String select_polls_sql = "SELECT * FROM polls WHERE status='running'";
+                    Statement select_stmt = conn.createStatement();
+                    ResultSet rs = select_stmt.executeQuery(select_polls_sql);
+                    while (rs.next()) {
+                        String id = rs.getString("poll_id");
+                        String name = rs.getString("name");
+                        String question = rs.getString("question");
+                        Poll poll = new Poll(id, name, question);
+                        clearPolls.add(poll);
+                    }
+                    session.setAttribute("clearPolls",clearPolls);
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+                response.sendRedirect("ClearPoll.jsp");
+                return;
             case "download":
                 //PollBusiness.DownloadPollDetails(thePoll);
                 request.getRequestDispatcher("manager_index.jsp").forward(request, response);
