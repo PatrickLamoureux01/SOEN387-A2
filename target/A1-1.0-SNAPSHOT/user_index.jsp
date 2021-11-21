@@ -17,7 +17,7 @@
                 <a href="view_results.jsp" class="btn btn-outline-primary" style="margin-bottom:15px;">
                     View Poll Results
                 </a>
-                <a href="PollServlet?type=download" class="btn btn-outline-primary">
+                <a href=" " class="btn btn-outline-primary">
                     Download Poll Results
                 </a>
             </c:when>
