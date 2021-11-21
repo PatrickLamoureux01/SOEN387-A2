@@ -1,11 +1,15 @@
 package com.example.a1;
 
+import com.google.protobuf.Message;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.*;
 
 @WebServlet(name = "UserLoginServlet", value = "/UserLoginServlet")
@@ -21,33 +25,46 @@ public class UserLoginServlet extends HttpServlet {
         HttpSession session = request.getSession(true);
         String email = request.getParameter("email");
         String passcode = request.getParameter("passcode");
+        String hashed = "";
         Connection conn = DBConnection.getConnection();
 
-        Statement stmt = null;
         try {
-            stmt = DBConnection.conn.createStatement();
-            // PREPARED STATEMENTS ARE BROKEN AND DO NOT WORK.
-            String sql = "SELECT user_id FROM users WHERE email='" + email+"' AND password='" + passcode + "'";
-            ResultSet rs = stmt.executeQuery(sql);
+            MessageDigest md = MessageDigest.getInstance("MD5");
+
+            byte[] messageDigest = md.digest(passcode.getBytes());
+
+            BigInteger no = new BigInteger(1, messageDigest);
+            String hashtext = no.toString(16);
+            while (hashtext.length() < 32) {
+                hashtext = "0" + hashtext;
+            }
+            hashed = hashtext;
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
+
+        PreparedStatement stmt = null;
+        try {
+            String sql = "SELECT user_id,fName,lName FROM users WHERE email=? AND password=?";
+            stmt = conn.prepareStatement(sql);
+            stmt.setString(1,email);
+            stmt.setString(2,hashed);
+            ResultSet rs = stmt.executeQuery();
 
             if (!rs.isBeforeFirst() ) {
                 session.setAttribute("invalid", "true");
                 RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
                 dispatcher.forward(request, response);
             } else {
-                response.sendRedirect("manager_index.jsp");
+                rs.next();
+                session.setAttribute("user_id", rs.getInt("user_id"));
+                session.setAttribute("fName", rs.getString("fName"));
+                session.setAttribute("lName", rs.getString("lName"));
+                request.getRequestDispatcher("manager_index.jsp").forward(request, response);
             }
 
         } catch(Exception e) {
             e.printStackTrace();
         }
-/*
-        if (!passcode.equals("a")) {
-            session.setAttribute("invalid", "true");
-            RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
-            dispatcher.forward(request, response);
-        } else {
-            response.sendRedirect("manager_index.jsp");
-        }*/
     }
 }

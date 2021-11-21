@@ -11,7 +11,7 @@
 <form>
     <div class="container d-flex flex-column min-vh-100 justify-content-center align-items-center">
         <div class="card">
-            <h5 class="card-header">Welcome, Poll Manager!</h5>
+            <h5 class="card-header">Welcome, ${fName} ${lName}!</h5>
             <div class="card-body">
                 <c:choose>
                     <c:when test="${poll.name==null}">
