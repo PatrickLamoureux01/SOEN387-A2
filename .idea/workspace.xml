@@ -11,12 +11,14 @@
   <component name="ChangeListManager">
     <list default="true" id="9de12481-cf48-49d6-9c39-a381df2c5a62" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a1/ManagerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/a1/ManagerServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/user_index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/user_index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a1/ManagerServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/a1/UserLoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/WEB-INF/classes/com/example/a1/ManagerServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/WEB-INF/classes/com/example/a1/ManagerServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/user_index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/user_index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/a1/ManagerServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/a1/ManagerServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/WEB-INF/classes/com/example/a1/ManagerServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/a1/ManagerServlet.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,8 +28,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>
@@ -58,6 +60,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
@@ -74,6 +77,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\User\OneDrive - Concordia University - Canada\School\Concordia\Semester_6\SOEN387\Assignments\A2\src\main\webapp" />
       <recent name="D:\User\OneDrive - Concordia University - Canada\School\Concordia\Semester_6\SOEN387\Assignments\A1\src\main\webapp\WEB-INF" />
     </key>
   </component>
@@ -220,7 +224,7 @@
       <workItem from="1637250403263" duration="9000" />
       <workItem from="1637250496030" duration="2594000" />
       <workItem from="1637447664791" duration="2009000" />
-      <workItem from="1637454725737" duration="4433000" />
+      <workItem from="1637454725737" duration="12089000" />
     </task>
     <servers />
   </component>

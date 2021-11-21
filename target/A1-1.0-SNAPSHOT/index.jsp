@@ -1,20 +1,28 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <!DOCTYPE HTML>
 <html xmlns="http://www.w3.org/1999/xhtml">
-<jsp:include page="/WEB-INF/head.jsp" />
+<jsp:include page="/WEB-INF/head.jsp"/>
 <body>
-<form method="POST" action="${pageContext.request.contextPath}/ManagerServlet">
-<div class="container d-flex flex-column min-vh-100 justify-content-center align-items-center">
-    <p>If you are a poll manager, please enter your passcode below:</p>
-    <input class="form-control btn-block" type="password" name="passcode"/>
-    <input class="form-control btn btn-outline-primary" type="submit" id="proceed" value="PROCEED"/>
-    <p>Otherwise, if you are a participant, please click <a href="user_index.jsp">here</a> to proceed.</p>
-    <% if (session.getAttribute("invalid") == "true") { %>
-    <p class="text-danger">The passcode is invalid.</p>
-    <%} %>
-</div>
+<form method="POST" action="${pageContext.request.contextPath}/UserLoginServlet">
+    <div class="container d-flex flex-column min-vh-100 justify-content-center align-items-center">
+        <p>Please enter your username and password below:</p>
+        <div class="mb-4 col-xs-4">
+            <label for="email" class="form-label">Email</label>
+            <input type="text" class="form-control" name="email" id="email">
+        </div>
+        <div class="mb-4 col-xs-4">
+            <label for="passcode" class="form-label">Password</label>
+            <input type="password" class="form-control" name="passcode" id="passcode">
+        </div>
+        <input class="form-control btn btn-outline-primary" type="submit" id="proceed" value="PROCEED"/>
+        <p>If you wish to remain anonymous, please click <a href="user_index.jsp">here</a> to proceed.</p>
+        <p>If you do not have an account yet, please click <a href="create_account.jsp">here</a> to create one.</p>
+        <% if (session.getAttribute("invalid") == "true") { %>
+        <p class="text-danger">The email/passcode is invalid.</p>
+        <%} %>
+    </div>
 </form>
 <hr>
-<jsp:include page="/WEB-INF/footer.jsp" />
+<jsp:include page="/WEB-INF/footer.jsp"/>
 </body>
 </html>
