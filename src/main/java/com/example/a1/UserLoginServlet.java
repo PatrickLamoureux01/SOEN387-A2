@@ -43,10 +43,9 @@ public class UserLoginServlet extends HttpServlet {
             e.printStackTrace();
         }
 
-        PreparedStatement stmt = null;
         try {
             String sql = "SELECT user_id,fName,lName FROM users WHERE email=? AND password=?";
-            stmt = conn.prepareStatement(sql);
+            PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setString(1,email);
             stmt.setString(2,hashed);
             ResultSet rs = stmt.executeQuery();

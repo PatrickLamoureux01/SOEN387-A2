@@ -18,7 +18,7 @@
                     Create a
                     Poll
                 </a>
-                <a href="PollDeletion.jsp" class="btn btn-outline-primary">
+                <a href="PollServlet?type=delete" class="btn btn-outline-primary">
                     Delete a
                     Poll
                 </a>

@@ -12,6 +12,7 @@ public class Poll implements Serializable {
         RELEASED
     }
 
+    private String id;
     private String name;
     private String question;
     private PollStatus status;
@@ -22,11 +23,21 @@ public class Poll implements Serializable {
 
     }
 
+    public Poll(String _id,String _name,String _question) {
+        this.id = _id;
+        this.name = _name;
+        this.question = _question;
+    }
+
     public Poll(String _name,String _question,ArrayList<Choice> _choices) {
         this.name = _name;
         this.question = _question;
         this.choices = _choices;
     }
+
+    public String getId() { return id; }
+
+    public void setId(String id) { this.id = id; }
 
     public String getName() {
         return name;
