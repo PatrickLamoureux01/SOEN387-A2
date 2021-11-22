@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<POLL>
+	<POLL INFO>
+		<POLL NAME>
+			UsePoll
+		</POLL NAME>
+		<POLL NAME>
+			Favorite Color
+		</POLL NAME>
+	</POLL INFO>
+	<VOTES>
+		<CHOICE>
+			red
+		</CHOICE>
+		<COUNT>
+			0
+		</COUNT>
+		<CHOICE>
+			green
+		</CHOICE>
+		<COUNT>
+			1
+		</COUNT>
+		<CHOICE>
+			blue
+		</CHOICE>
+		<COUNT>
+			1
+		</COUNT>
+		<CHOICE>
+			yellow
+		</CHOICE>
+		<COUNT>
+			2
+		</COUNT>
+	</VOTES>
+</POLL>
