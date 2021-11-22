@@ -39,7 +39,7 @@ public class PollServlet extends HttpServlet {
                 List<Poll> pollsToDelete = new ArrayList<Poll>();
 
                 try {
-                    String select_polls_sql = "SELECT * FROM polls WHERE createdBy = ? AND poll_id NOT IN(SELECT poll_id from vote)";
+                    String select_polls_sql = "SELECT * FROM polls WHERE createdBy = ? AND status <> 'closed' AND poll_id NOT IN(SELECT poll_id from vote)";
                     PreparedStatement select_polls = conn.prepareStatement(select_polls_sql);
                     select_polls.setInt(1,(int)session.getAttribute("user_id"));
                     ResultSet rs = select_polls.executeQuery();
@@ -50,7 +50,7 @@ public class PollServlet extends HttpServlet {
                         Poll poll = new Poll(id, name, question);
                         pollsToDelete.add(poll);
                     }
-                    session.setAttribute("polls",pollsToDelete);
+                    session.setAttribute("pollsToDelete",pollsToDelete);
                 } catch (Exception ex) {
                     ex.printStackTrace();
                 }
@@ -79,7 +79,7 @@ public class PollServlet extends HttpServlet {
             case "close":
                 List<Poll> closePolls = new ArrayList<Poll>();
                 try {
-                    String select_polls_sql = "SELECT * FROM polls";
+                    String select_polls_sql = "SELECT * FROM polls WHERE status <> 'closed'";
                     Statement select_stmt = conn.createStatement();
                     ResultSet rs = select_stmt.executeQuery(select_polls_sql);
                     while (rs.next()) {
@@ -190,7 +190,6 @@ public class PollServlet extends HttpServlet {
         String question =  request.getParameter("pollQuestion");
         String choices = request.getParameter("pollChoices");
         String[] choicesTemp = choices.split(",");
-        //ArrayList<Choice> pollChoices = new ArrayList<>();
 
         // Generate poll_id
         String alphanum = "0123456789ABCDEFGHJKMNPQRSTVWXYZ";
@@ -221,19 +220,11 @@ public class PollServlet extends HttpServlet {
                 String[] descTemp = c.split(":");
                 try {
                     String insert_choice_sql = "INSERT INTO choices(name,description,poll_id) VALUES(?,?,?)";
-                    PreparedStatement insert_choice = conn.prepareStatement(insert_choice_sql,Statement.RETURN_GENERATED_KEYS);
+                    PreparedStatement insert_choice = conn.prepareStatement(insert_choice_sql);
                     insert_choice.setString(1,descTemp[0]);
                     insert_choice.setString(2,descTemp[1]);
                     insert_choice.setString(3,poll_id);
                     insert_choice.executeUpdate();
-                    /*ResultSet generatedId = insert_choice.getGeneratedKeys();
-                    if (generatedId.next()) {
-                        String insert_pollChoice_sql = "INSERT INTO pollchoice(choice_id,poll_id) VALUES(?,?)";
-                        PreparedStatement insert_pollchoice = conn.prepareStatement(insert_pollChoice_sql);
-                        insert_pollchoice.setInt(1,generatedId.getInt(1));
-                        insert_pollchoice.setString(2,poll_id);
-                        insert_pollchoice.executeUpdate();
-                    }*/
 
                 } catch (Exception ex) {
                     ex.printStackTrace();
@@ -241,28 +232,16 @@ public class PollServlet extends HttpServlet {
             } else {
                 try {
                     String insert_choice_sql = "INSERT INTO choices(name,poll_id) VALUES(?,?)";
-                    PreparedStatement insert_choice = conn.prepareStatement(insert_choice_sql,Statement.RETURN_GENERATED_KEYS);
+                    PreparedStatement insert_choice = conn.prepareStatement(insert_choice_sql);
                     insert_choice.setString(1,c);
                     insert_choice.setString(2,poll_id);
                     insert_choice.executeUpdate();
-                    /*ResultSet generatedId = insert_choice.getGeneratedKeys();
-                    if (generatedId.next()) {
-                        String insert_pollChoice_sql = "INSERT INTO pollchoice(choice_id,poll_id) VALUES(?,?)";
-                        PreparedStatement insert_pollchoice = conn.prepareStatement(insert_pollChoice_sql);
-                        insert_pollchoice.setInt(1,generatedId.getInt(1));
-                        insert_pollchoice.setString(2,poll_id);
-                        insert_pollchoice.executeUpdate();
-                    }*/
                 } catch (Exception ex) {
                     ex.printStackTrace();
                 }
             }
         }
 
-        Poll newPoll = new Poll();
-        //PollBusiness.CreatePoll(newPoll,name,question,pollChoices);
-        request.setAttribute("poll", newPoll);
-        session.setAttribute("poll",newPoll);
         request.getRequestDispatcher("manager_index.jsp").forward(request, response);
     }
 }

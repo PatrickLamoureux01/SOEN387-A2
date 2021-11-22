@@ -7,10 +7,24 @@
 <form method="POST" action="${pageContext.request.contextPath}/PollRunServlet">
     <div class="container d-flex flex-column min-vh-100 justify-content-center align-items-center">
         <p>Select the poll you would like to run.</p>
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th></th>
+                <th scope="col">Poll ID</th>
+                <th scope="col">Poll Name</th>
+                <th scope="col">Poll Question</th>
+            </tr>
+            </thead>
         <c:forEach var="poll" items="${runningPolls}">
-            <input type="radio" id="${poll.id}" name="poll_to_run" value="${poll.id}">
-            <label for="${poll.id}">${poll.name} - ${poll.question}</label><br>
+            <tr>
+                <th scope="row"><input type="radio" id="${poll.id}" name="poll_to_run" value="${poll.id}"></th>
+                <td>${poll.id}</td>
+                <td>${poll.name}</td>
+                <td>${poll.question}</td>
+            </tr>
         </c:forEach>
+        </table>
         <button type="submit" name="pollRun" class="btn btn-success">Run Poll</button>
     </div>
 </form>

@@ -24,30 +24,10 @@ public class PollCloseServlet extends HttpServlet {
 
         try
         {
-            // wipe out poll
-            String delete_poll_sql = "DELETE FROM polls WHERE poll_id = ?";
-            PreparedStatement delete_poll = conn.prepareStatement(delete_poll_sql);
-            delete_poll.setString(1,id);
-            delete_poll.executeUpdate();
-
-            // wipe out choices
-            String delete_choices_sql = "DELETE FROM choices WHERE poll_id = ?";
-            PreparedStatement delete_choices = conn.prepareStatement(delete_choices_sql);
-            delete_choices.setString(1,id);
-            delete_choices.executeUpdate();
-
-            // wipe out votes
-            String delete_votes_sql = "DELETE FROM vote WHERE poll_id = ?";
-            PreparedStatement delete_votes = conn.prepareStatement(delete_votes_sql);
-            delete_votes.setString(1,id);
-            delete_votes.executeUpdate();
-
-            // wipe out pollUser
-            String delete_pollUser_sql = "DELETE FROM pollUser WHERE poll_id = ?";
-            PreparedStatement delete_pollUser = conn.prepareStatement(delete_pollUser_sql);
-            delete_pollUser.setString(1,id);
-            delete_pollUser.executeUpdate();
-
+            String close_poll_sql = "UPDATE polls SET status='closed' WHERE poll_id = ?";
+            PreparedStatement close_poll = conn.prepareStatement(close_poll_sql);
+            close_poll.setString(1,id);
+            close_poll.executeUpdate();
         } catch (Exception ex) {
             ex.printStackTrace();
         }

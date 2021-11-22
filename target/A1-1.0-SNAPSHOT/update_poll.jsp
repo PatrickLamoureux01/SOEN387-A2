@@ -8,12 +8,12 @@
     <div class="container d-flex flex-column min-vh-100 justify-content-center align-items-center">
         <div class="mb-4">
             <label for="pollName" class="form-label">Poll Name</label>
-            <input type="text" class="form-control" name="pollName" id="pollName" aria-describedby="pollHelp" value="${poll.name}">
+            <input type="text" class="form-control" name="pollName" id="pollName" aria-describedby="pollHelp" value="${param.name}">
             <div id="pollHelp" class="form-text">Enter the updated name for your poll.</div>
         </div>
         <div class="mb-4">
             <label for="pollQuestion" class="form-label">Question</label>
-            <input type="text" class="form-control" name="pollQuestion" id="pollQuestion" aria-describedby="questionHelp" value="${poll.question}">
+            <input type="text" class="form-control" name="pollQuestion" id="pollQuestion" aria-describedby="questionHelp" value="${param.q}">
             <div id="questionHelp" class="form-text">Enter the updated question for your poll.</div>
         </div>
         <div class="mb-4">
@@ -21,6 +21,7 @@
             <input type="text" class="form-control" name="pollChoices" id="pollChoices" aria-describedby="choicesHelp">
             <div id="choicesHelp" class="form-text">Enter the updated choices for your poll in the following format: Choice:(optional description),... </div>
         </div>
+        <input hidden type="text" class="form-control" name="pollId" id="pollId" aria-describedby="pollHelp" value="${param.id}">
         <button type="submit" name="pollUpdate" class="btn btn-primary">Update Poll</button>
     </div>
 </form>
