@@ -11,12 +11,18 @@
   <component name="ChangeListManager">
     <list default="true" id="9de12481-cf48-49d6-9c39-a381df2c5a62" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a1/PollVoteServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/a1/PollVoteServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a1/VoteServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/a1/VoteServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/change_password.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/change_password.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/manager_index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/manager_index.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/thankyou.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/thankyou.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a1/PollServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/a1/PollServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/head.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/head.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/user_index.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/WEB-INF/classes/com/example/a1/ChangeVoteServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/WEB-INF/classes/com/example/a1/ChangeVoteServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/WEB-INF/classes/com/example/a1/PollServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/WEB-INF/classes/com/example/a1/PollServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/WEB-INF/head.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/WEB-INF/head.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/user_index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/a1/ChangeVoteServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/a1/ChangeVoteServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/a1/PollServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/a1/PollServlet.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -235,7 +241,7 @@
       <workItem from="1637250403263" duration="9000" />
       <workItem from="1637250496030" duration="2594000" />
       <workItem from="1637447664791" duration="2009000" />
-      <workItem from="1637454725737" duration="46505000" />
+      <workItem from="1637454725737" duration="49597000" />
     </task>
     <servers />
   </component>

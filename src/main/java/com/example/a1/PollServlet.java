@@ -214,10 +214,24 @@ public class PollServlet extends HttpServlet {
                 response.sendRedirect("GetListPolls.jsp");
                 return;
             case "download":
-                //PollBusiness.DownloadPollDetails(thePoll);
-                request.getRequestDispatcher("manager_index.jsp").forward(request, response);
-                break;
-
+                List<Poll> downloadPolls = new ArrayList<Poll>();
+                try {
+                    String select_polls_sql = "SELECT * FROM polls WHERE status='released'";
+                    Statement select_stmt = conn.createStatement();
+                    ResultSet rs = select_stmt.executeQuery(select_polls_sql);
+                    while (rs.next()) {
+                        String id = rs.getString("poll_id");
+                        String name = rs.getString("name");
+                        String question = rs.getString("question");
+                        Poll poll = new Poll(id, name, question);
+                        downloadPolls.add(poll);
+                    }
+                    session.setAttribute("downloadPolls",downloadPolls);
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+                response.sendRedirect("DownloadPoll.jsp");
+                return;
         }
     }
 
