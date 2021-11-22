@@ -17,7 +17,7 @@
                         <a class="nav-link active" href="#">Actions</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="change_password.jsp">Change Password</a>
+                        <a class="nav-link" href="./change_password.jsp">Change Password</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link disabled" href="#">Disabled</a>
@@ -29,6 +29,9 @@
                 <p class="card-text">Please select from the following list of actions:</p>
                 <a href="PollServlet?type=vote" class="btn btn-outline-primary">
                     Access Polls
+                </a>
+                <a href="ChangeVote.jsp" class="btn btn-outline-primary">
+                    Change Vote
                 </a>
                 <a href="PollCreation.jsp" class="btn btn-outline-primary">
                     Create a

@@ -51,7 +51,5 @@ public class PollVoteServlet extends HttpServlet {
             ex.printStackTrace();
         }
         response.sendRedirect("VotePoll.jsp");
-        //request.getRequestDispatcher("VotePoll.jsp").forward(request, response);
-
     }
 }
