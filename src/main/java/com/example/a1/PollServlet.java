@@ -35,6 +35,27 @@ public class PollServlet extends HttpServlet {
         //Poll thePoll = (Poll) session.getAttribute("poll");
 
         switch (parameterType) {
+            case "vote":
+                List<Poll> pollsToVote = new ArrayList<Poll>();
+
+                try {
+                    String select_polls_sql = "SELECT * FROM polls WHERE status='running'";
+                    Statement select_stmt = conn.createStatement();
+                    ResultSet rs = select_stmt.executeQuery(select_polls_sql);
+                    while (rs.next()) {
+                        String id = rs.getString("poll_id");
+                        String name = rs.getString("name");
+                        String question = rs.getString("question");
+                        Poll poll = new Poll(id, name, question);
+                        pollsToVote.add(poll);
+                    }
+                    session.setAttribute("pollsToVote",pollsToVote);
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+
+                response.sendRedirect("AccessPolls.jsp");
+                return;
             case "delete":
                 List<Poll> pollsToDelete = new ArrayList<Poll>();
 

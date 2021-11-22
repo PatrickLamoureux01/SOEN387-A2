@@ -79,10 +79,5 @@ public class Poll implements Serializable {
 
     public void upvote(int index) { this.choices.get(index).incrementVotes(); }
 
-    public void clear() {
-        for (Choice c : choices) {
-            c.votes = 0;
-        }
-    }
 
 }

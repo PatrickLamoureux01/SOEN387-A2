@@ -2,25 +2,30 @@ package com.example.a1;
 
 import org.w3c.dom.Text;
 
-public class Choice {
+import java.io.Serializable;
 
-    String text;
-    String description;
-    int votes;
+public class Choice implements Serializable {
 
+    private int id;
+    private String text;
+    private String description;
+    private int votes;
 
-    public Choice(String t, String d) {
+    public Choice() {
 
-        text = t;
-        description = d;
-        votes = 0;
     }
 
-    public Choice(String t) {
-        text = t;
-        description = null;
-        votes = 0;
+    public Choice(int i, String t, String d) {
+
+        this.id = i;
+        this.text = t;
+        this.description = d;
+        this.votes = 0;
     }
+
+    public int getId() { return id; }
+
+    public void setId(int id) { this.id = id; }
 
     public String getText() {
         return text;

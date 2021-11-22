@@ -6,7 +6,7 @@
 <body>
 <form method="POST" action="${pageContext.request.contextPath}/PollUnreleaseServlet">
     <div class="container d-flex flex-column min-vh-100 justify-content-center align-items-center">
-        <p>Select the poll you would like to delete.</p>
+        <p>Select the poll you would like to unrelease.</p>
         <h5>Please note that only polls that are released will appear in this list.</h5>
         <table class="table table-hover">
             <thead>

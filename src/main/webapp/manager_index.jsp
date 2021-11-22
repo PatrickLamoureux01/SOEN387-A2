@@ -10,10 +10,26 @@
 
 <form>
     <div class="container d-flex flex-column min-vh-100 justify-content-center align-items-center">
-        <div class="card">
-            <h5 class="card-header">Welcome, ${fName} ${lName}!</h5>
+        <div class="card text-center">
+            <div class="card-header">
+                <ul class="nav nav-tabs card-header-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Actions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="change_password.jsp">Change Password</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#">Disabled</a>
+                    </li>
+                </ul>
+            </div>
             <div class="card-body">
+                <h5 class="card-title">Welcome, ${fName} ${lName}!</h5>
                 <p class="card-text">Please select from the following list of actions:</p>
+                <a href="PollServlet?type=vote" class="btn btn-outline-primary">
+                    Access Polls
+                </a>
                 <a href="PollCreation.jsp" class="btn btn-outline-primary">
                     Create a
                     Poll

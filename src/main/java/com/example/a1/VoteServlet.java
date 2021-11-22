@@ -5,6 +5,8 @@ import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.util.ArrayList;
 import java.util.stream.IntStream;
 
@@ -19,17 +21,27 @@ public class VoteServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         HttpSession session = request.getSession(true);
-        Poll p = (Poll) session.getAttribute("poll");
+        Connection conn = DBConnection.getConnection();
 
         String answer = request.getParameter("pollChoice");
+        String id = (String) session.getAttribute("pollId");
 
-        ArrayList<Choice> cs = p.getChoices();
-        int index = IntStream.range(0, cs.size())
-                .filter(i -> cs.get(i).text.equals(answer))
-                .findFirst()
-                .orElse(-1);
+        try {
+            // insert vote
+            String insert_vote_sql = "INSERT INTO vote(poll_id,choice_id) VALUES(?,?)";
+            PreparedStatement insert_vote = conn.prepareStatement(insert_vote_sql);
+            insert_vote.setString(1,id);
+            insert_vote.setString(2,answer);
+            insert_vote.executeUpdate();
 
-        p.upvote(index);
+            // insert pin
+
+
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
         request.getRequestDispatcher("thankyou.jsp").forward(request, response);
 
     }
