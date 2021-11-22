@@ -136,9 +136,31 @@ public class PollDownloadServlet extends HttpServlet {
 
         } else {
 
+            String targetPath = "D:\\User\\OneDrive - Concordia University - Canada\\School\\Concordia\\Semester_6\\SOEN387\\Assignments\\A2\\";
+            String filename = pollName+"-"+pollTime+".json";
+            File newFile = new File(targetPath,filename);
+            try {
+                PrintWriter output = new PrintWriter(newFile);
+                output.write("{\n");
+                output.write("\t\"poll_info\": {\n");
+                output.write("\t\t\"name\": \""+pollName + "\"\n");
+                output.write("\t\t\"question\": \""+pollQuestion + "\"\n");
+                output.write("\t}\n");
+                output.write("\t\"votes\": {\n");
+                for (Choice x : choices) {
+                    output.write("\t\t\""+x.getText()+"\": \""+Collections.frequency(votes,x.getId()) + "\"\n");
+                }
+                output.write("\t}\n");
+                output.write("}\n");
+
+                output.flush();
+                output.close();
+
+            } catch (Exception ex) {
+                System.out.println(ex);
+            }
+
         }
-
         request.getRequestDispatcher("manager_index.jsp").forward(request, response);
-
     }
 }

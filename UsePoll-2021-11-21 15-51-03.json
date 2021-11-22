@@ -1,0 +1,12 @@
+{
+	"poll_info": {
+		"name": "UsePoll"
+		"question": "Favorite Color"
+	}
+	"votes": {
+		"red": "0"
+		"green": "1"
+		"blue": "1"
+		"yellow": "2"
+	}
+}
