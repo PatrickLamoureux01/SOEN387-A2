@@ -77,9 +77,24 @@ public class PollServlet extends HttpServlet {
                 response.sendRedirect("RunPoll.jsp");
                 return;
             case "close":
-                //PollBusiness.ClosePoll(thePoll);
-                request.getRequestDispatcher("manager_index.jsp").forward(request, response);
-                break;
+                List<Poll> closePolls = new ArrayList<Poll>();
+                try {
+                    String select_polls_sql = "SELECT * FROM polls";
+                    Statement select_stmt = conn.createStatement();
+                    ResultSet rs = select_stmt.executeQuery(select_polls_sql);
+                    while (rs.next()) {
+                        String id = rs.getString("poll_id");
+                        String name = rs.getString("name");
+                        String question = rs.getString("question");
+                        Poll poll = new Poll(id, name, question);
+                        closePolls.add(poll);
+                    }
+                    session.setAttribute("closePolls",closePolls);
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+                response.sendRedirect("ClosePoll.jsp");
+                return;
             case "release":
                 List<Poll> releasePolls = new ArrayList<Poll>();
                 try {

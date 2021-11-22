@@ -12,7 +12,7 @@
             <input type="radio" id="${poll.id}" name="poll_to_clear" value="${poll.id}">
             <label for="${poll.id}">${poll.name} - ${poll.question}</label><br>
         </c:forEach>
-        <button type="submit" name="pollCreate" class="btn btn-primary">Clear Poll</button>
+        <button type="submit" name="pollClear" class="btn btn-primary">Clear Poll</button>
     </div>
 </form>
 <hr>

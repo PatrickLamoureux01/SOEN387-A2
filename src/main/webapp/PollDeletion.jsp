@@ -14,7 +14,7 @@
             <input type="radio" id="${poll.id}" name="poll_to_delete" value="${poll.id}">
             <label for="${poll.id}">${poll.name} - ${poll.question}</label><br>
         </c:forEach>
-        <button type="submit" name="pollCreate" class="btn btn-danger">Delete Poll</button>
+        <button type="submit" name="pollDelete" class="btn btn-danger">Delete Poll</button>
     </div>
 </form>
 <hr>

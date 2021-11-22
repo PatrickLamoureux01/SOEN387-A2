@@ -11,7 +11,7 @@
             <input type="radio" id="${poll.id}" name="poll_to_run" value="${poll.id}">
             <label for="${poll.id}">${poll.name} - ${poll.question}</label><br>
         </c:forEach>
-        <button type="submit" name="pollCreate" class="btn btn-success">Run Poll</button>
+        <button type="submit" name="pollRun" class="btn btn-success">Run Poll</button>
     </div>
 </form>
 <hr>
