@@ -171,6 +171,27 @@ public class PollServlet extends HttpServlet {
                 }
                 response.sendRedirect("ClearPoll.jsp");
                 return;
+            case "getpolls":
+                List<Poll> getPolls = new ArrayList<Poll>();
+                try {
+                    String select_polls_sql = "SELECT * FROM polls WHERE createdBy = ?";
+                    PreparedStatement select_stmt = conn.prepareStatement(select_polls_sql);
+                    select_stmt.setInt(1,(int)session.getAttribute("user_id"));
+                    ResultSet rs = select_stmt.executeQuery();
+                    while (rs.next()) {
+                        String id = rs.getString("poll_id");
+                        String name = rs.getString("name");
+                        String question = rs.getString("question");
+                        String status = rs.getString("status");
+                        Poll poll = new Poll(id, name, question,status);
+                        getPolls.add(poll);
+                    }
+                    session.setAttribute("getPolls",getPolls);
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+                response.sendRedirect("GetListPolls.jsp");
+                return;
             case "download":
                 //PollBusiness.DownloadPollDetails(thePoll);
                 request.getRequestDispatcher("manager_index.jsp").forward(request, response);

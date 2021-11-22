@@ -6,16 +6,11 @@ import java.util.ArrayList;
 
 public class Poll implements Serializable {
 
-    enum PollStatus {
-        CREATED,
-        RUNNING,
-        RELEASED
-    }
 
     private String id;
     private String name;
     private String question;
-    private PollStatus status;
+    private String status;
     private ArrayList<Choice> choices;
     private String dt;
 
@@ -27,6 +22,13 @@ public class Poll implements Serializable {
         this.id = _id;
         this.name = _name;
         this.question = _question;
+    }
+
+    public Poll(String _id,String _name,String _question,String _status) {
+        this.id = _id;
+        this.name = _name;
+        this.question = _question;
+        this.status = _status;
     }
 
     public Poll(String _name,String _question,ArrayList<Choice> _choices) {
@@ -55,11 +57,11 @@ public class Poll implements Serializable {
         this.question = question;
     }
 
-    public PollStatus getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(PollStatus status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 

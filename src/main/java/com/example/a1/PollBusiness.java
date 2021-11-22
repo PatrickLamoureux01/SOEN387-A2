@@ -14,7 +14,7 @@ import java.util.HashMap;
 public class PollBusiness {
 
 
-
+/*
     public static void CreatePoll(Poll poll, String name, String question, ArrayList<Choice> choices) {
         try {
             poll.setName(name);
@@ -163,5 +163,5 @@ public class PollBusiness {
             System.out.println(ex);
         }
     }
-
+*/
 }

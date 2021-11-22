@@ -44,6 +44,9 @@
                     Close
                     Poll
                 </a>
+                <a href="PollServlet?type=getpolls" class="btn btn-outline-primary">
+                    Get List of polls
+                </a>
                 <a href="view_results.jsp" class="btn btn-outline-primary">
                     View Poll Results
                 </a>
