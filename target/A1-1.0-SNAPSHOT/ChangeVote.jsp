@@ -5,6 +5,7 @@
 <body>
 <form method="POST" action="${pageContext.request.contextPath}/ChangeVoteServlet">
     <div class="container d-flex flex-column min-vh-100 justify-content-center align-items-center">
+        <h5>Please enter the PIN that you were given at the time of your voting.</h5>
         <div class="mb-4">
             <label for="pin" class="form-label">PIN #</label>
             <input type="text" class="form-control" name="pin" id="pin" aria-describedby="pollHelp">
