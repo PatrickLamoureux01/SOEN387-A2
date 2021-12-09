@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="A2:war" />
+      <artifact name="A3:war" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
@@ -10,13 +10,75 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9de12481-cf48-49d6-9c39-a381df2c5a62" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webContexts.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webContexts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a1/PollDownloadServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/a1/PollDownloadServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Candy-2021-11-22 16-54-35.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UsePoll-2021-11-21 15-51-03.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UsePoll-2021-11-21 15-51-03.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UsePoll-2021-11-21 15-51-03.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/soen387.2021f.a02.assignment.ii.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a1/ChangeVoteServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Votes/ChangeVoteServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a1/Choice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Classes/Choice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a1/DBConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Classes/DBConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a1/Poll.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Classes/Poll.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a1/PollClearServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PollServlets/PollClearServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a1/PollCloseServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PollServlets/PollCloseServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a1/PollDeleteServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PollServlets/PollDeleteServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a1/PollDownloadServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PollServlets/PollDownloadServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a1/PollReleaseServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PollServlets/PollReleaseServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a1/PollRunServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PollServlets/PollRunServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a1/PollServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/a1/PollServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a1/PollUnreleaseServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PollServlets/PollUnreleaseServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a1/PollVoteServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/PollServlets/PollVoteServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a1/UpdateServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Votes/UpdateServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a1/UserLoginServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UserManagement/UserLoginServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/a1/VoteServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Votes/VoteServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/create_account.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/create_account.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/index.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/manager_index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/manager_index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/thankyou.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/thankyou.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/view_results.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/view_results.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/WEB-INF/classes/com/example/a1/PollDownloadServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/WEB-INF/classes/com/example/a1/PollDownloadServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/example/a1/PollDownloadServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/a1/PollDownloadServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/ChangeVote.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/ChangeVote.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/WEB-INF/classes/com/example/a1/ChangeVoteServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/WEB-INF/classes/com/example/a1/Choice.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/WEB-INF/classes/com/example/a1/DBConnection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/WEB-INF/classes/com/example/a1/Poll.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/WEB-INF/classes/com/example/a1/PollClearServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/WEB-INF/classes/com/example/a1/PollCloseServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/WEB-INF/classes/com/example/a1/PollDeleteServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/WEB-INF/classes/com/example/a1/PollDownloadServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/WEB-INF/classes/com/example/a1/PollReleaseServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/WEB-INF/classes/com/example/a1/PollRunServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/WEB-INF/classes/com/example/a1/PollServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/WEB-INF/classes/com/example/a1/PollServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/WEB-INF/classes/com/example/a1/PollUnreleaseServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/WEB-INF/classes/com/example/a1/PollVoteServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/WEB-INF/classes/com/example/a1/UpdateServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/WEB-INF/classes/com/example/a1/UserLoginServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/WEB-INF/classes/com/example/a1/VoteServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/create_account.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/create_account.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/manager_index.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/manager_index.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/thankyou.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/thankyou.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/view_results.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/view_results.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/a1/ChangeVoteServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/a1/Choice.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/a1/DBConnection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/a1/Poll.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/a1/PollClearServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/a1/PollCloseServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/a1/PollDeleteServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/a1/PollDownloadServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/a1/PollReleaseServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/a1/PollRunServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/a1/PollServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/a1/PollServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/a1/PollUnreleaseServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/a1/PollVoteServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/a1/UpdateServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/a1/UserLoginServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/a1/VoteServlet.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,15 +133,19 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
+    <property name="settings.editor.selected.configurable" value="file.status.colors" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\User\OneDrive - Concordia University - Canada\School\Concordia\Semester_6\SOEN387\Assignments\A3\src\main\webapp" />
       <recent name="D:\User\OneDrive - Concordia University - Canada\School\Concordia\Semester_6\SOEN387\Assignments\A2\src\main\webapp" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\User\OneDrive - Concordia University - Canada\School\Concordia\Semester_6\SOEN387\Assignments\A2\src\main\webapp" />
       <recent name="D:\User\OneDrive - Concordia University - Canada\School\Concordia\Semester_6\SOEN387\Assignments\A1\src\main\webapp\WEB-INF" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.a1" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.My server">
@@ -106,13 +172,13 @@
       <method v="2" />
     </configuration>
     <configuration name="My server" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 10.0.12" ALTERNATIVE_JRE_ENABLED="false">
-      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8980/A2_war/" />
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8980/A3_war/" />
       <option name="SHOW_DIALOG_ON_UPDATE" value="false" />
       <option name="UPDATING_POLICY" value="redeploy-artifacts" />
       <deployment>
-        <artifact name="A2:war">
+        <artifact name="A3:war">
           <settings>
-            <option name="CONTEXT_PATH" value="/A2_war" />
+            <option name="CONTEXT_PATH" value="/A3_war" />
           </settings>
         </artifact>
       </deployment>
@@ -192,15 +258,16 @@
         <option name="Make" enabled="true" />
         <option name="BuildArtifacts" enabled="true">
           <artifact name="A2:war" />
+          <artifact name="A3:war" />
         </option>
       </method>
     </configuration>
     <list>
+      <item itemvalue="JavaScript Debug.change_password.jsp" />
+      <item itemvalue="JavaScript Debug.manager_index.jsp" />
       <item itemvalue="JUnit.All in A1" />
       <item itemvalue="JUnit.All in A1 (1)" />
       <item itemvalue="Tomcat Server.My server" />
-      <item itemvalue="JavaScript Debug.change_password.jsp" />
-      <item itemvalue="JavaScript Debug.manager_index.jsp" />
     </list>
     <recent_temporary>
       <list>
@@ -235,7 +302,9 @@
       <workItem from="1637250403263" duration="9000" />
       <workItem from="1637250496030" duration="2594000" />
       <workItem from="1637447664791" duration="2009000" />
-      <workItem from="1637454725737" duration="53571000" />
+      <workItem from="1637454725737" duration="55415000" />
+      <workItem from="1637876919832" duration="5225000" />
+      <workItem from="1638976379005" duration="12566000" />
     </task>
     <servers />
   </component>

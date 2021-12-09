@@ -15,10 +15,14 @@
             <input type="password" class="form-control" name="passcode" id="passcode">
         </div>
         <input class="form-control btn btn-outline-primary" type="submit" id="proceed" value="PROCEED"/>
-        <p>If you wish to remain anonymous, please click <a href="AccessPolls.jsp">here</a> to vote.</p>
+        <p>If you wish to remain anonymous, please click <a href="PollServlet?type=vote_anon">here</a> to vote.</p>
         <p>If you do not have an account yet, please click <a href="create_account.jsp">here</a> to create one.</p>
+        <p>If you have forgotten your password, please click <a href="forgot_password.jsp">here</a> to recover it.</p>
         <% if (session.getAttribute("invalid") == "true") { %>
         <p class="text-danger">The email/passcode is invalid.</p>
+        <%} %>
+        <% if (session.getAttribute("validated_token") == "true") { %>
+        <p class="text-success">Your account has been verified!</p>
         <%} %>
     </div>
 </form>

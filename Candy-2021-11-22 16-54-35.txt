@@ -1,5 +1,0 @@
-Poll name: Candy
-Poll Question: What is your favorite candy
-mars: 1
-reese: 0
-smarties: 0

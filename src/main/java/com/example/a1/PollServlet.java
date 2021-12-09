@@ -1,26 +1,21 @@
 package com.example.a1;
 
+import Classes.DBConnection;
+import Classes.Poll;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
 
-
-import java.io.File;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
-
-import static java.lang.System.out;
-
 
 
 @WebServlet(name = "com.example.a1.PollServlet", value = "/PollServlet")
@@ -35,6 +30,27 @@ public class PollServlet extends HttpServlet {
         //Poll thePoll = (Poll) session.getAttribute("poll");
 
         switch (parameterType) {
+            case "vote_anon":
+                List<Poll> pollsToVoteAnon = new ArrayList<Poll>();
+
+                try {
+                    String select_polls_sql = "SELECT * FROM polls WHERE status='running'";
+                    Statement select_stmt = conn.createStatement();
+                    ResultSet rs = select_stmt.executeQuery(select_polls_sql);
+                    while (rs.next()) {
+                        String id = rs.getString("poll_id");
+                        String name = rs.getString("name");
+                        String question = rs.getString("question");
+                        Poll poll = new Poll(id, name, question);
+                        pollsToVoteAnon.add(poll);
+                    }
+                    session.setAttribute("pollsToVoteAnon",pollsToVoteAnon);
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+
+                response.sendRedirect("AccessPollsAnon.jsp");
+                return;
             case "vote":
                 List<Poll> pollsToVote = new ArrayList<Poll>();
 
@@ -232,9 +248,8 @@ public class PollServlet extends HttpServlet {
                 }
                 response.sendRedirect("DownloadPoll.jsp");
                 return;
-            case "getchart":
-                /*
-                List<Poll> choices = new ArrayList<Poll>();
+            case "viewres":
+                List<Poll> resPolls = new ArrayList<Poll>();
                 try {
                     String select_polls_sql = "SELECT * FROM polls WHERE status='released'";
                     Statement select_stmt = conn.createStatement();
@@ -244,15 +259,14 @@ public class PollServlet extends HttpServlet {
                         String name = rs.getString("name");
                         String question = rs.getString("question");
                         Poll poll = new Poll(id, name, question);
-                        downloadPolls.add(poll);
+                        resPolls.add(poll);
                     }
-                    session.setAttribute("choices",downloadPolls);
+                    session.setAttribute("resPolls",resPolls);
                 } catch (Exception ex) {
                     ex.printStackTrace();
                 }
-                response.sendRedirect("view_results.jsp");
-                return;*/
-                break;
+                response.sendRedirect("ViewResults.jsp");
+                return;
         }
     }
 

@@ -1,5 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page import="com.example.a1.Poll" %>
+<%@ page import="Classes.Poll" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ page session="true" %>
 
@@ -66,7 +66,7 @@
                 <a href="PollServlet?type=getpolls" class="btn btn-outline-primary">
                     Get List of polls
                 </a>
-                <a href="PollServlet?type=getchart" class="btn btn-outline-primary">
+                <a href="PollServlet?type=viewres" class="btn btn-outline-primary">
                     View Poll Results
                 </a>
                 <a href="PollServlet?type=download" class="btn btn-outline-primary">
