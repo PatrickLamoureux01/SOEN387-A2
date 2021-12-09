@@ -37,6 +37,7 @@ public class CreateAccountServlet extends HttpServlet {
         for (int i = 0; i < 10; i++)
             chars[i] = alphanum.charAt(random.nextInt(alphabetLength));
         String token =  String.valueOf(chars);
+        request.setAttribute("token",token);
 
         try {
             String sql = "INSERT INTO users(email,fName,lName,token) VALUES(?,?,?,?)";
@@ -46,8 +47,10 @@ public class CreateAccountServlet extends HttpServlet {
             stmt.setString(3,lname);
             stmt.setString(4,token);
             stmt.executeUpdate();
+            RequestDispatcher rd = request.getRequestDispatcher("EmailServlet");
+            rd.forward(request,response);
             //session.setAttribute("user_email",email);
-            request.getRequestDispatcher("email_sent.jsp").forward(request, response);
+            //request.getRequestDispatcher("email_sent.jsp").forward(request, response);
 
         } catch(Exception e) {
             e.printStackTrace();
