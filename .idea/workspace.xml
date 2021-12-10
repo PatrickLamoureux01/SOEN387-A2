@@ -10,17 +10,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9de12481-cf48-49d6-9c39-a381df2c5a62" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/sqldialects.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/EmailGateway/EmailServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EmailGateway/EmailServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/UserManagement/CreateAccountServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/UserManagement/CreateAccountServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/EmailGateway/EmailUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EmailGateway/EmailUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/EmailGateway/ValidateTokenServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EmailGateway/ValidateTokenServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/EnterTokenSignup.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/ValidateToken.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/email_sent.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/email_sent.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/EnterTokenSignup.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/ValidateToken.jsp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/WEB-INF/classes/EmailGateway/EmailServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/WEB-INF/classes/EmailGateway/EmailServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/WEB-INF/classes/UserManagement/CreateAccountServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/WEB-INF/classes/UserManagement/CreateAccountServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/WEB-INF/classes/EmailGateway/EmailUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/WEB-INF/classes/EmailGateway/EmailUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/WEB-INF/classes/EmailGateway/ValidateTokenServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/WEB-INF/classes/EmailGateway/ValidateTokenServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/email_sent.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/A1-1.0-SNAPSHOT/email_sent.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/EmailGateway/EmailServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/EmailGateway/EmailServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/UserManagement/CreateAccountServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/UserManagement/CreateAccountServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/EmailGateway/EmailUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/EmailGateway/EmailUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/EmailGateway/ValidateTokenServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/EmailGateway/ValidateTokenServlet.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,8 +37,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Jsp File" />
         <option value="Class" />
+        <option value="Jsp File" />
       </list>
     </option>
   </component>

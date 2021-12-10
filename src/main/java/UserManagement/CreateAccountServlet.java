@@ -37,7 +37,7 @@ public class CreateAccountServlet extends HttpServlet {
         for (int i = 0; i < 10; i++)
             chars[i] = alphanum.charAt(random.nextInt(alphabetLength));
         String token =  String.valueOf(chars);
-        request.setAttribute("token",token);
+        session.setAttribute("token",token);
 
         try {
             String sql = "INSERT INTO users(email,fName,lName,token) VALUES(?,?,?,?)";

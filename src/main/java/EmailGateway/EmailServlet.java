@@ -25,8 +25,6 @@ public class EmailServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-
-
     }
 
     @Override
@@ -35,17 +33,16 @@ public class EmailServlet extends HttpServlet {
         String email = request.getParameter("email");
         String token = (String) request.getAttribute("token");
         String res = "";
+        String html = "<html><body>Greetings,<br>Thanks for signing up to the poll service. Please verify your account by clicking <a href=\"http://localhost:8980/A3_war/set_pass.jsp?type=signup&token="+token+"\">here</a></body></html>";
 
         try {
-
-            EmailUtil.sendEmail(host, port, user, pass, "soen387temp@gmail.com","SOEN387",token);
+            EmailUtil.sendEmail(host, port, user, pass, "soen387temp@gmail.com","SOEN387 - Please validate your account",html);
             res = "Success";
         } catch (Exception ex) {
             ex.printStackTrace();
             res = "Error: " + ex.getMessage();
         } finally {
             request.setAttribute("Message", res);
-            System.out.println(res);
             getServletContext().getRequestDispatcher("/email_sent.jsp").forward(request,response);
         }
 

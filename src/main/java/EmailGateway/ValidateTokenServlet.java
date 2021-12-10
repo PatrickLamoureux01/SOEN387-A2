@@ -6,6 +6,9 @@ import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
 import java.io.IOException;
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -22,53 +25,45 @@ public class ValidateTokenServlet extends HttpServlet {
 
         Connection conn = DBConnection.getConnection();
         HttpSession session = request.getSession(true);
-        String token = request.getParameter("token");
-
+        String token = (String) session.getAttribute("token");
+        String password = request.getParameter("password");
+        String hashed = "";
 
         try {
 
+            // validate the user
             String update_users_sql = "UPDATE users SET isValidated = 1 WHERE token = ?";
             PreparedStatement validate = conn.prepareStatement(update_users_sql);
             validate.setString(1, token);
             validate.executeUpdate();
 
+            // hash password
+            try {
+                MessageDigest md = MessageDigest.getInstance("MD5");
+
+                byte[] messageDigest = md.digest(password.getBytes());
+
+                BigInteger no = new BigInteger(1, messageDigest);
+                String hashtext = no.toString(16);
+                while (hashtext.length() < 32) {
+                    hashtext = "0" + hashtext;
+                }
+                hashed = hashtext;
+            } catch (NoSuchAlgorithmException e) {
+                e.printStackTrace();
+            }
+
+            // set the password
+            String update_pass_sql = "UPDATE users SET password = ? WHERE token = ?";
+            PreparedStatement pass = conn.prepareStatement(update_pass_sql);
+            pass.setString(1, hashed);
+            pass.setString(2,token);
+            pass.executeUpdate();
+            session.setAttribute("validated_token","true");
+            request.getRequestDispatcher("index.jsp").forward(request, response);
+
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-/*
-        // verify token
-        try {
-            String sql = "SELECT * FROM users WHERE email=? AND token=?";
-            PreparedStatement stmt = conn.prepareStatement(sql);
-            stmt.setString(1, (String) session.getAttribute("user_email"));
-            stmt.setString(2,token);
-            ResultSet rs = stmt.executeQuery();
-
-            if (!rs.isBeforeFirst() ) {
-                session.setAttribute("invalid_token", "true");
-                RequestDispatcher dispatcher = request.getRequestDispatcher("EnterTokenSignup.jsp");
-                dispatcher.forward(request, response);
-            } else {
-                rs.next();
-                // update users table
-                try {
-                    String update_users_sql = "UPDATE users SET isValidated = 1 WHERE email = ?";
-                    PreparedStatement validate = conn.prepareStatement(update_users_sql);
-                    validate.setString(1, (String) session.getAttribute("user_email"));
-                    validate.executeUpdate();
-
-                } catch(Exception e) {
-                    e.printStackTrace();
-                }
-                session.setAttribute("validated_token", "true");
-                request.getRequestDispatcher("index.jsp").forward(request, response);
-            }
-
-        } catch(Exception e) {
-            e.printStackTrace();
-        }
-*/
-
-
     }
 }
