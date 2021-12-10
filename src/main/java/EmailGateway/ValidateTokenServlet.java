@@ -68,7 +68,7 @@ public class ValidateTokenServlet extends HttpServlet {
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
-        } else {
+        } else if (type.equals("forgot")){
             String token = (String) session.getAttribute("f_token");
 
             try {
@@ -101,6 +101,37 @@ public class ValidateTokenServlet extends HttpServlet {
             } catch (Exception ex) {
                 ex.printStackTrace();
             }
+
+        } else {
+        try {
+            // hash password
+            try {
+                MessageDigest md = MessageDigest.getInstance("MD5");
+
+                byte[] messageDigest = md.digest(password.getBytes());
+
+                BigInteger no = new BigInteger(1, messageDigest);
+                String hashtext = no.toString(16);
+                while (hashtext.length() < 32) {
+                    hashtext = "0" + hashtext;
+                }
+                hashed = hashtext;
+            } catch (NoSuchAlgorithmException e) {
+                e.printStackTrace();
+            }
+
+            // set the password
+            String update_pass_sql2 = "UPDATE users SET password = ? WHERE user_id = ?";
+            PreparedStatement pass2 = conn.prepareStatement(update_pass_sql2);
+            pass2.setString(1, hashed);
+            pass2.setInt(2, (Integer) session.getAttribute("user_id"));
+            pass2.executeUpdate();
+            session.setAttribute("validated_token", "false");
+            session.setAttribute("forgot_token", "true");
+            request.getRequestDispatcher("index.jsp").forward(request, response);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
 
         }
 

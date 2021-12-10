@@ -7,6 +7,7 @@
     <file url="file://$PROJECT_DIR$/src/main/java/PollServlets/PollReleaseServlet.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/PollServlets/PollRunServlet.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/PollServlets/PollUnreleaseServlet.java" dialect="GenericSQL" />
+    <file url="file://$PROJECT_DIR$/src/main/java/UserManagement/ChangePasswordServlet.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/UserManagement/CreateAccountServlet.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/UserManagement/ForgotPasswordServlet.java" dialect="GenericSQL" />
     <file url="file://$PROJECT_DIR$/src/main/java/UserManagement/UserLoginServlet.java" dialect="GenericSQL" />

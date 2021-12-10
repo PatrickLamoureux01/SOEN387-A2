@@ -8,8 +8,14 @@
     <div class="container d-flex flex-column min-vh-100 justify-content-center align-items-center">
         <c:if test="${param.type=='signup'}">
             <h5 class="text-success">Your email address has been verified!</h5>
+            <h5>Please choose your password.</h5>
         </c:if>
-        <h5>Please choose your password.</h5>
+        <c:if test="${param.type=='forgot'}">
+            <h5>Please choose your password.</h5>
+        </c:if>
+        <c:if test="${param.type=='change'}">
+            <h5>Please choose your new password.</h5>
+        </c:if>
         <div class="mb-4">
             <label for="password" class="form-label">Password</label>
             <input type="password" class="form-control" name="password" id="password">
