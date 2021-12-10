@@ -24,6 +24,9 @@
         <% if (session.getAttribute("validated_token") == "true") { %>
         <p class="text-success">Your account has been verified!</p>
         <%} %>
+        <% if (session.getAttribute("forgot_token") == "true") { %>
+        <p class="text-success">Your password has been updated!</p>
+        <%} %>
     </div>
 </form>
 <hr>

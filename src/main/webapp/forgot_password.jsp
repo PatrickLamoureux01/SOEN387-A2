@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <jsp:include page="/WEB-INF/head.jsp"/>
 <body>
-<form method="POST" action="${pageContext.request.contextPath}/UserLoginServlet">
+<form method="POST" action="${pageContext.request.contextPath}/ForgotPasswordServlet">
     <div class="container d-flex flex-column min-vh-100 justify-content-center align-items-center">
         <p>Please enter your email address below to be sent a recovery token.</p>
         <div class="mb-4 col-xs-4">

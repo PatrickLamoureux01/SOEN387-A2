@@ -37,20 +37,20 @@ public class CreateAccountServlet extends HttpServlet {
         for (int i = 0; i < 10; i++)
             chars[i] = alphanum.charAt(random.nextInt(alphabetLength));
         String token =  String.valueOf(chars);
-        session.setAttribute("token",token);
+        session.setAttribute("s_token",token);
 
         try {
-            String sql = "INSERT INTO users(email,fName,lName,token) VALUES(?,?,?,?)";
+            String sql = "INSERT INTO users(email,fName,lName,validation_token) VALUES(?,?,?,?)";
             PreparedStatement stmt = conn.prepareStatement(sql);
             stmt.setString(1,email);
             stmt.setString(2,fname);
             stmt.setString(3,lname);
             stmt.setString(4,token);
             stmt.executeUpdate();
+            session.setAttribute("r_type","signup");
             RequestDispatcher rd = request.getRequestDispatcher("EmailServlet");
             rd.forward(request,response);
-            //session.setAttribute("user_email",email);
-            //request.getRequestDispatcher("email_sent.jsp").forward(request, response);
+
 
         } catch(Exception e) {
             e.printStackTrace();
