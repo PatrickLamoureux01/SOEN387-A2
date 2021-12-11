@@ -18,6 +18,7 @@
         <p>If you wish to remain anonymous, please click <a href="PollServlet?type=vote_anon">here</a> to vote.</p>
         <p>If you do not have an account yet, please click <a href="create_account.jsp">here</a> to create one.</p>
         <p>If you have forgotten your password, please click <a href="forgot_password.jsp">here</a> to recover it.</p>
+        <a class="btn btn-primary" href="RunTestsServlet">Run Tests</a>
         <% if (session.getAttribute("invalid") == "true") { %>
         <p class="text-danger">The email/passcode is invalid.</p>
         <%} %>

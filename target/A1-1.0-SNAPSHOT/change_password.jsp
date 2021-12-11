@@ -10,7 +10,7 @@
             <label for="password" class="form-label">Password</label>
             <input type="password" class="form-control" name="password" id="password">
         </div>
-        <input class="form-control btn btn-outline-primary" type="submit" id="recover" value="Recover Password"/>
+        <input class="form-control btn btn-outline-primary" type="submit" id="change" value="Change Password"/>
         <% if (session.getAttribute("invalid_change") == "true") { %>
         <p class="text-danger">That password is invalid.</p>
         <%} %>

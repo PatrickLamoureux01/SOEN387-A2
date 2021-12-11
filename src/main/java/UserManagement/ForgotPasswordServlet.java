@@ -1,6 +1,7 @@
 package UserManagement;
 
 import Classes.DBConnection;
+import TestSuite.TestSuite;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
@@ -21,6 +22,8 @@ public class ForgotPasswordServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        TestSuite ts = new TestSuite();
 
         Connection conn = DBConnection.getConnection();
         HttpSession session = request.getSession(true);
@@ -58,6 +61,8 @@ public class ForgotPasswordServlet extends HttpServlet {
             stmt2.setString(1,token);
             stmt2.setString(2,email);
             stmt2.executeUpdate();
+            ts.write("Forgot token generated is: "+token+"\n");
+            ts.checkForgotToken(email);
             session.setAttribute("r_type","forgot");
             RequestDispatcher rd = request.getRequestDispatcher("EmailServlet");
             rd.forward(request,response);

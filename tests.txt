@@ -1,0 +1,45 @@
+Test: Check User
+Test ran on: 2021-12-10T21:26:07.667925300
+Value: steviewonder@gmail.com
+Result: This user DOES exist.
+
+Test: Check User
+Test ran on: 2021-12-10T21:26:07.696193400
+Value: jeremyclarkson@gmail.com
+Result: This user does NOT exist.
+
+Test: Authenticate User
+Test ran on: 2021-12-10T21:26:07.697681900
+Email: rogerwaters@gmail.com
+Password: aaa
+Result: The user rogerwaters@gmail.com has been authenticated with password aaa.
+
+Test: Authenticate User
+Test ran on: 2021-12-10T21:26:07.700161100
+Email: rogerwaters@gmail.com
+Password: abcdef
+Result: The password abcdef does not correspond to the email rogerwaters@gmail.com.
+
+Test: Check User Signup
+Test ran on: 2021-12-10T21:26:24.979556700
+Email: barackobama@gmail.com
+Full Name: Barack Obama
+Password: null
+Validated: 0
+All fields are correct. User signup successful.
+
+
+Forgot token generated is: 1TXJ615RZC
+Test: Check Forgot Token
+Test ran on: 2021-12-10T21:26:51.033414100
+Email: barackobama@gmail.com
+Result: User barackobama@gmail.com's forgot token is: 1TXJ615RZC.
+Forgot tokens match. Forgot token successfully changed.
+
+Current MD5 hash for barackobama@gmail.com: 7e358766a8e42571c8f5715c229eb167
+Test: Check Password Change
+Test ran on: 2021-12-10T21:27:19.086570400
+Email: barackobama@gmail.com
+Current MD5 hash for barackobama@gmail.com is a40c0ee90451a127cc66eef339c378cd
+Passwords do not match. Password change was successful.
+

@@ -1,6 +1,7 @@
 package EmailGateway;
 
 import Classes.DBConnection;
+import TestSuite.TestSuite;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
@@ -23,6 +24,8 @@ public class ValidateTokenServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+
+        TestSuite ts = new TestSuite();
         Connection conn = DBConnection.getConnection();
         HttpSession session = request.getSession(true);
         String type = (String) session.getAttribute("r_type");
@@ -120,20 +123,20 @@ public class ValidateTokenServlet extends HttpServlet {
                 e.printStackTrace();
             }
 
+            ts.write("Current MD5 hash for "+ts.getEmail((Integer) session.getAttribute("user_id"))+": "+ts.getPassword((Integer) session.getAttribute("user_id"))+"\n");
             // set the password
             String update_pass_sql2 = "UPDATE users SET password = ? WHERE user_id = ?";
             PreparedStatement pass2 = conn.prepareStatement(update_pass_sql2);
             pass2.setString(1, hashed);
             pass2.setInt(2, (Integer) session.getAttribute("user_id"));
             pass2.executeUpdate();
+            ts.checkPasswordChanged(ts.getEmail((Integer) session.getAttribute("user_id")));
             session.setAttribute("validated_token", "false");
             session.setAttribute("forgot_token", "true");
             request.getRequestDispatcher("index.jsp").forward(request, response);
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-
         }
-
     }
 }

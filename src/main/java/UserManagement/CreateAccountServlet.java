@@ -1,6 +1,7 @@
 package UserManagement;
 
 import Classes.DBConnection;
+import TestSuite.TestSuite;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
@@ -23,6 +24,8 @@ public class CreateAccountServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+
+        TestSuite ts = new TestSuite();
         Connection conn = DBConnection.getConnection();
         HttpSession session = request.getSession(true);
         String email = request.getParameter("email");
@@ -48,6 +51,7 @@ public class CreateAccountServlet extends HttpServlet {
             stmt.setString(4,token);
             stmt.executeUpdate();
             session.setAttribute("r_type","signup");
+            ts.checkUserRecentlyCreated(email);
             RequestDispatcher rd = request.getRequestDispatcher("EmailServlet");
             rd.forward(request,response);
 
