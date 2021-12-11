@@ -1,0 +1,213 @@
+*** USE IN https://sequencediagram.org/ ***
+
+title User Sign Up Scenario
+
+participant User Email
+participant User
+participant Index Page
+participant Account Create Page
+participant set_pass Page
+participant Back End
+
+User->Index Page:Visits
+Index Page->Account Create Page:Click Create Account
+Account Create Page->Account Create Page:Enter Form(email,name)
+Account Create Page->Account Create Page:Submit Form
+Account Create Page->User Email:Sends Email
+User->User Email:Checks Email
+User Email->set_pass Page:User Clicks Link
+set_pass Page->set_pass Page:Enter Form with password
+set_pass Page->set_pass Page:Submit Form
+set_pass Page->Back End:Account Validated and Password set
+set_pass Page->Index Page:Return User to:
+
+
+
+
+
+
+
+
+
+*** USE IN https://sequencediagram.org/ ***
+
+
+title User Change Password Scenario
+
+participant User
+participant Index Page
+participant Change Password Page
+participant set_pass Page
+participant Back End
+
+
+User->Index Page:Visits
+Index Page->Change Password Page:Click Change Password
+Change Password Page->Change Password Page:Enter current Password
+group #2f2e7b Password Incorrect #white
+Change Password Page->Change Password Page:Refresh Page
+end
+Change Password Page->set_pass Page:Correct Password
+set_pass Page->set_pass Page:Enter New Password
+set_pass Page->Back End:New Password sent
+set_pass Page->Index Page:User returned to:
+Back End->Back End:Password Updated
+
+
+
+*** USE IN http://www.plantuml.com/plantuml/uml/ ***
+
+
+
+@startuml
+class Poll{
+id : String
+name : String
+question : String
+status : String
+choices : ArrayList<Choice>
+dt : String
+
+Poll()
+Poll(_id:String,_name:String,_question:String)
+Poll(_id:String,_name:String,_question:String,_status String)
+Poll(_name:String,_question:String,_choices:ArrayList<Choice>)
+
+getId() : String
+setId(id:String)
+
+getName() : String
+setName(name:String)
+
+getQuestion() : String
+setQuestion(question:String)
+
+getStatus() : String
+setStatus(status:String)
+
+getChoices() : ArrayList<Choice>
+setChoices(choices:ArrayList<Choice>)
+
+
+
+}
+
+class Choice{
+id : int
+text : String
+description : String
+votes : int
+
+Choice()
+Choice(i:int,t:string,d String)
+
+getId() : int
+setId(id:int)
+
+getText() : String
+setText(text:String)
+
+getDescription() : String
+setDescription(description:String)
+
+getVotes() : int
+setVotes(vote:int)
+
+incrementVotes()
+}
+
+class PollClearServlet{
+doGet(request : HttpServletRequest, response : HttpServletResponse)
+doPost(request : HttpServletRequest, response : HttpServletResponse)
+}
+
+class PollCloseServlet{
+doGet(request : HttpServletRequest, response : HttpServletResponse)
+doPost(request : HttpServletRequest, response : HttpServletResponse)
+}
+
+class PollDeleteServlet{
+doGet(request : HttpServletRequest, response : HttpServletResponse)
+doPost(request : HttpServletRequest, response : HttpServletResponse)
+}
+
+class PollReleaseServlet{
+doGet(request : HttpServletRequest, response : HttpServletResponse)
+doPost(request : HttpServletRequest, response : HttpServletResponse)
+}
+
+class PollRunServlet{
+doGet(request : HttpServletRequest, response : HttpServletResponse)
+doPost(request : HttpServletRequest, response : HttpServletResponse)
+}
+
+class PollServlet{
+doGet(request : HttpServletRequest, response : HttpServletResponse)
+doPost(request : HttpServletRequest, response : HttpServletResponse)
+}
+
+class PollUnreleaseServlet{
+doGet(request : HttpServletRequest, response : HttpServletResponse)
+doPost(request : HttpServletRequest, response : HttpServletResponse)
+}
+
+class PollVoteServlet{
+doGet(request : HttpServletRequest, response : HttpServletResponse)
+doPost(request : HttpServletRequest, response : HttpServletResponse)
+}
+
+class UpdateServlet{
+doGet(request : HttpServletRequest, response : HttpServletResponse)
+doPost(request : HttpServletRequest, response : HttpServletResponse)
+}
+
+class UserLoginServlet{
+doGet(request : HttpServletRequest, response : HttpServletResponse)
+doPost(request : HttpServletRequest, response : HttpServletResponse)
+}
+
+class VoteServlet{
+doGet(request : HttpServletRequest, response : HttpServletResponse)
+doPost(request : HttpServletRequest, response : HttpServletResponse)
+}
+
+class EmailServlet{
+host : String
+port : String
+user : String
+pass : String
+
+doGet(request : HttpServletRequest, response : HttpServletResponse)
+doPost(request : HttpServletRequest, response : HttpServletResponse)
+}
+
+
+class ChangePasswordServlet{
+doGet(request : HttpServletRequest, response : HttpServletResponse)
+doPost(request : HttpServletRequest, response : HttpServletResponse)
+}
+
+class CreateAccountServlet{
+doGet(request : HttpServletRequest, response : HttpServletResponse)
+doPost(request : HttpServletRequest, response : HttpServletResponse)
+}
+
+class ForgotPasswordServlet{
+doGet(request : HttpServletRequest, response : HttpServletResponse)
+doPost(request : HttpServletRequest, response : HttpServletResponse)
+}
+
+class UserLoginServlet{
+doGet(request : HttpServletRequest, response : HttpServletResponse)
+doPost(request : HttpServletRequest, response : HttpServletResponse)
+}
+
+class ValidateTokenServlet{
+doGet(request : HttpServletRequest, response : HttpServletResponse)
+doPost(request : HttpServletRequest, response : HttpServletResponse)
+}
+
+
+Poll*- Choice
+PollServlet -> Poll
+@enduml
